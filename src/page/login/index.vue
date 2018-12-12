@@ -22,11 +22,11 @@
                 <div v-if="sysMsg" class="err-msg">{{sysMsg}}</div>
             </div>
             <div class="lang-toggle">
-                <span :class="{cur: lang=='zhCN'}" @click="changeLang('zhCN')">中</span> | 
+                <span :class="{cur: lang=='zhCN'}" @click="changeLang('zhCN')">中</span> |
                 <span :class="{cur: lang=='en'}" @click="changeLang('en')">En</span>
             </div>
             <div class="lang-toggle">
-                <span :class="{cur: theme=='theme-default'}" @click="changeTheme('theme-default')">浅</span> | 
+                <span :class="{cur: theme=='theme-default'}" @click="changeTheme('theme-default')">浅</span> |
                 <span :class="{cur: theme=='theme-dark'}" @click="changeTheme('theme-dark')">深</span>
             </div>
             <div class="tip">
@@ -90,10 +90,10 @@ export default {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
                     this.login({
-                        name: this.loginForm.name,
-                        password: this.loginForm.password
+                      userName: this.loginForm.name,
+                      passWord: this.loginForm.password
                     }).then(res => {
-                        if(res.login){
+                        if(res.status === 200){
                             this.$router.push('home')
                         } else {
                             this.sysMsg = res.message

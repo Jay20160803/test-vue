@@ -71,12 +71,12 @@ function stopRepeatRequest(url, c){
 
 // 超时设置
 const service = axios.create({
-    // 请求超时时间
-    timeout: 5000                 
+    //baseURL: 'http://locahost:8080',
+    timeout: 5000
 });
 
 // baseURL
-// axios.defaults.baseURL = 'https://api.github.com';
+ //axios.defaults.baseURL = 'http://locahost:8088';
 
 // http request 拦截器
 // 每次请求都为http头增加Authorization字段，其内容为token
@@ -123,7 +123,7 @@ service.interceptors.response.use(
                     router.push('error/401');
                 case 403:
                     router.push('error/403');
-                default: 
+                default:
                     Message({
                         message: `服务器错误！错误代码：${error.response.status}`,
                         type: 'error'

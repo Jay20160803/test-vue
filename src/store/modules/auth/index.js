@@ -31,13 +31,15 @@ const actions = {
             axios({
                 url: '/login',
                 method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                baseURL: 'http://localhost:8088',
                 data: {
                     ...userInfo
                 }
             }).then(res => {
-                if(res.login){
-                    commit('setToken', res.token)
-                    commit('user/setName', res.name, { root: true })
+                if(res.status === 200){
+                    commit('setToken', res.data.token)
+                    commit('user/setName', res.data.name, { root: true })
                 }
                 resolve(res)
             })
