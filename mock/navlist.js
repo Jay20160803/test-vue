@@ -80,6 +80,20 @@ var data = [
     {
         path: '/theme',
         name: '主题切换'
+    },
+    {
+      name: '权限' ,
+      child: [
+        {
+          name: '用户',
+          path: '/user',
+          permission: ['edit','delete','read']
+        },
+        {
+          name: '角色',
+          path: '/role'
+        }
+      ]
     }
 ]
 

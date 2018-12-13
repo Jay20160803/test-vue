@@ -117,6 +117,16 @@ const staticRoute = [
             }
         ]
     },
+   {
+      path: '/user',
+      component: Layout,
+      children: [
+        {
+          path: '',
+          component: () => import(/* webpackChunkName: 'themeChange' */ '../page/permission/user')
+        }
+      ]
+    },
     {
         path: '*',
         redirect: '/error/404'

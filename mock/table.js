@@ -3,46 +3,46 @@ export default{
     data: {
         head: [
             {
-                key: 'name',
-                name: '姓名'
+                key: 'id',
+                name: 'id'
             },
             {
-                key: 'sex',
-                name: '性别'
+              key: 'userName',
+              name: '姓名'
             },
             {
-                key: 'age',
-                name: '年龄'
-            },
-            {
-                key: 'address',
-                name: '地址'
-            },
-            {
-                key: 'email',
-                name: '邮件'
-            },
-            {
-                key: 'remark',
-                name: '备注'
+                key: 'phone',
+                name: 'phone'
             }
         ],
         body: [
+          {
+            "id": 20,
+            "userName": "Andy2",
+            "passWord": "123456",
+            "phone": null,
+          },
+          {
+            "id": 21,
+            "userName": "Andy4",
+            "passWord": "a94d5cd0079cfc8db030e1107de1addd1903a01b",
+            "phone": null,
+          },
             {
-                'name': '@cname',
+                'userName': '@cname',
                 'sex|1': ["男", "女"],
                 'age': '@natural(18, 60)',
                 'address': '@city(true) ',
-                'email': '@email()',
+                'phone': '18816904369',
                 'remark': '@cparagraph(1)',
                 operation: 'edit,delete'
             },
             {
-                'name': '@cname',
+                'userName': '@cname',
                 'sex|1': ["男", "女"],
                 'age': '@natural(18, 60)',
                 'address': '@city(true)',
-                'email': '@email()',
+                'phone': '18816904369',
                 'remark': '@cparagraph(1)',
                 operation: 'edit,delete'
             },
